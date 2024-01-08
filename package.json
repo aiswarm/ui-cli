@@ -1,0 +1,27 @@
+{
+  "name": "@aiswarm/ui-cli",
+  "version": "1.0.0",
+  "description": "A plugin for the AI Swarm that allows to interact with agents via command line interface.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js run",
+    "watch": "nodemon index.js --  run \"Starting Instructions\" -d",
+    "test": "jest --coverage test/",
+    "link": "npm link ../orchestrator ../driver-openai"
+  },
+  "author": "Ravi Gairola <mallox@pyxzl.net",
+  "license": "MIT",
+  "dependencies": {
+    "@aiswarm/orchestrator": "^1.0.0",
+    "commander": "^11.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/eslint-parser": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
+    "@types/jest": "^29.5.10",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0"
+  }
+}
