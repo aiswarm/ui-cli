@@ -8,12 +8,12 @@
     "start": "node index.js run",
     "watch": "nodemon index.js --  run \"Starting Instructions\" -d",
     "test": "jest --coverage test/",
-    "link": "npm link ../orchestrator ../driver-openai"
+    "link": "npm link ../orchestrator"
   },
   "author": "Ravi Gairola <mallox@pyxzl.net",
   "license": "MIT",
   "dependencies": {
-    "@aiswarm/orchestrator": "^1.0.0",
+    "@aiswarm/orchestrator": "^0.1.0",
     "commander": "^11.1.0"
   },
   "devDependencies": {
