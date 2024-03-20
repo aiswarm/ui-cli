@@ -15,7 +15,7 @@ import {initialize} from '@aiswarm/orchestrator'
 async function start() {
   program
     .option(
-      '-c, --config -path-',
+      '-c, --config <path>',
       'Path to the configuration file or directory. Defaults to ./config.'
     )
     .option(
@@ -47,8 +47,12 @@ Optional Commands:
   options.debug && (loglevel = 'debug')
   options.verbose && (loglevel = 'trace')
   const [command, prompt] = program.args
-  switch (command) {
+  switch (command.trim()) {
   case undefined:
+  case null:
+  case false:
+  case '':
+  case 'undefined':
     await initialize(options.config, loglevel)
     break
   case 'run':
