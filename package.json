@@ -1,6 +1,6 @@
 {
   "name": "@aiswarm/ui-cli",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A plugin for the AI Swarm that allows to interact with agents via command line interface.",
   "main": "index.js",
   "type": "module",
