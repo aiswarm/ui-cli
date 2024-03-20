@@ -15,6 +15,7 @@ import {initialize} from '@aiswarm/orchestrator'
 async function start() {
   program
     .option(
+      // noinspection ALL
       '-c, --config <path>',
       'Path to the configuration file or directory. Defaults to ./config.'
     )
