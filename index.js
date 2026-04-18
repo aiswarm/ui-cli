@@ -4,9 +4,8 @@
  * src/.
  */
 
-import {program} from 'commander'
-
-import {initialize} from '@aiswarm/orchestrator'
+import { program } from 'commander'
+import { initialize } from '@aiswarm/orchestrator'
 
 /**
  * Parses the arguments to the command line interface and starts the swarm orchestration system.
@@ -19,10 +18,7 @@ async function start() {
       '-c, --config <path>',
       'Path to the configuration file or directory. Defaults to ./config.'
     )
-    .option(
-      '-d, --debug',
-      'Enable debug mode. Shows more information in the logs.'
-    )
+    .option('-d, --debug', 'Enable debug mode. Shows more information in the logs.')
     .option(
       '-v, --verbose',
       'Enable verbose mode. Warning: This can get spammy and might leak secrets.'
@@ -49,20 +45,20 @@ Optional Commands:
   options.verbose && (loglevel = 'trace')
   const [command, prompt] = program.args
   switch (command.trim()) {
-  case undefined:
-  case null:
-  case false:
-  case '':
-  case 'undefined':
-    await initialize(options.config, loglevel)
-    break
-  case 'run':
-    await (await initialize(options.config, loglevel)).run(prompt)
-    break
-  default:
-    // eslint-disable-next-line no-console
-    console.error('Unknown command', command)
-    process.exit(1)
+    case undefined:
+    case null:
+    case false:
+    case '':
+    case 'undefined':
+      await initialize(options.config, loglevel)
+      break
+    case 'run':
+      await (await initialize(options.config, loglevel)).run(prompt)
+      break
+    default:
+      // eslint-disable-next-line no-console
+      console.error('Unknown command', command)
+      process.exit(1)
   }
 }
 
