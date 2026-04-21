@@ -25,6 +25,7 @@ async function start() {
     )
     .option('-h, --help', 'Print this help messageInput.')
     .allowUnknownOption(true)
+    .allowExcessArguments(true)
     .showHelpAfterError(true)
     .parse(process.argv)
 
@@ -44,7 +45,7 @@ Optional Commands:
   options.debug && (loglevel = 'debug')
   options.verbose && (loglevel = 'trace')
   const [command, prompt] = program.args
-  switch (command.trim()) {
+  switch ((command ?? '').trim()) {
     case undefined:
     case null:
     case false:
